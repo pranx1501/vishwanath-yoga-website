@@ -80,7 +80,40 @@
         ::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 10px; }
     </style>
 </head>
+
+    
+    
 <body class="text-gray-800">
+
+    <!-- Popup Form -->
+<div id="popupForm" class="fixed inset-0 bg-black/70 hidden justify-center items-center z-50">
+  <div class="bg-white p-8 rounded-2xl w-[90%] max-w-md relative">
+
+    <!-- Close Button -->
+    <button onclick="closeForm()" class="absolute top-3 right-4 text-xl">&times;</button>
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Join Vishwanath Yoga</h2>
+
+    <form name="registration" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="registration">
+
+      <input type="text" name="name" placeholder="Your Name" required class="w-full mb-3 p-3 border rounded-lg">
+      <input type="tel" name="phone" placeholder="Phone Number" required class="w-full mb-3 p-3 border rounded-lg">
+      <input type="email" name="email" placeholder="Email" class="w-full mb-3 p-3 border rounded-lg">
+
+      <select name="goal" class="w-full mb-4 p-3 border rounded-lg">
+        <option>Weight Loss</option>
+        <option>Flexibility</option>
+        <option>General Fitness</option>
+      </select>
+
+      <button type="submit" class="w-full bg-orange-500 text-white p-3 rounded-lg font-bold">
+        Register Now
+      </button>
+    </form>
+
+  </div>
+</div>
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 glass-nav py-4 px-6 md:px-12 flex justify-between items-center">
@@ -105,10 +138,9 @@
                 Elevate your physical and spiritual well-being with <br> 
                 <span class="font-semibold text-white">Experienced Yoga Teacher Pranav Sandesh Chakranarayan</span>
             </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0fKbG9rS06J6IfkD92h8pggK8yPHcG6Cop496YH20cVM6OA/viewform" target="_blank" class="btn-premium px-10 py-4 rounded-full text-lg font-bold">Join Our Studio</a>
-                <a href="#about" class="bg-white/10 backdrop-blur-md border border-white/30 px-10 py-4 rounded-full text-lg font-bold hover:bg-white/20 transition">Learn More</a>
-            </div>
+            <button onclick="openForm()" class="btn-premium px-10 py-4 rounded-full text-lg font-bold">
+  Join Our Studio
+</button>
         </div>
     </section>
 
@@ -305,8 +337,19 @@ document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
 });
 </script>
+    <script>
+function openForm() {
+  document.getElementById("popupForm").classList.remove("hidden");
+  document.getElementById("popupForm").classList.add("flex");
+}
+
+function closeForm() {
+  document.getElementById("popupForm").classList.add("hidden");
+}
+</script>
 </body>
 </html>
+
 
 
 
