@@ -85,40 +85,13 @@
     
 <body class="text-gray-800">
 
-    <!-- Popup Form -->
-<div id="popupForm" class="fixed inset-0 bg-black/70 hidden justify-center items-center z-50">
-  <div class="bg-white p-8 rounded-2xl w-[90%] max-w-md relative">
-
-    <!-- Close Button -->
-    <button onclick="closeForm()" class="absolute top-3 right-4 text-xl">&times;</button>
-
-    <h2 class="text-2xl font-bold mb-4 text-center">Join Vishwanath Yoga</h2>
-
-    <form name="registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
-
+  <form name="registration" method="POST" data-netlify="true" hidden>
   <input type="hidden" name="form-name" value="registration">
-  <input type="hidden" name="bot-field">
-
-  <input type="text" name="name" placeholder="Your Name" required class="w-full mb-3 p-3 border rounded-lg">
-
-  <input type="tel" name="phone" placeholder="Phone Number" required class="w-full mb-3 p-3 border rounded-lg">
-
-  <input type="email" name="email" placeholder="Email" class="w-full mb-3 p-3 border rounded-lg">
-
-  <select name="goal" class="w-full mb-4 p-3 border rounded-lg">
-    <option>Weight Loss</option>
-    <option>Flexibility</option>
-    <option>General Fitness</option>
-  </select>
-
-  <button type="submit" class="w-full bg-orange-500 text-white p-3 rounded-lg font-bold">
-    Register Now
-  </button>
-
+  <input type="text" name="name">
+  <input type="tel" name="phone">
+  <input type="email" name="email">
+  <input type="text" name="goal">
 </form>
-
-  </div>
-</div>
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 glass-nav py-4 px-6 md:px-12 flex justify-between items-center">
@@ -354,6 +327,7 @@ function closeForm() {
 </script>
 </body>
 </html>
+
 
 
 
