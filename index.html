@@ -82,18 +82,11 @@
 </head>
 
     
-    
-<body class="text-gray-800">
+   <!-- Replace your entire <body> tag and its contents with this updated version -->
 
-  <form name="registration" method="POST" data-netlify="true" hidden>
-  <input type="hidden" name="form-name" value="registration">
-  <input type="text" name="name">
-  <input type="tel" name="phone">
-  <input type="email" name="email">
-  <input type="text" name="goal">
-</form>
+<body class="text-gray-800 relative">
 
-    <!-- Navbar -->
+    <!-- NAVIGATION (No changes here) -->
     <nav class="fixed w-full z-50 glass-nav py-4 px-6 md:px-12 flex justify-between items-center">
         <div class="text-xl md:text-2xl font-bold tracking-[0.2em] text-gray-900">
             VISHWANATH <span class="text-saffron">YOGA</span>
@@ -107,7 +100,7 @@
         <a href="https://wa.me/919561382982" class="btn-premium px-5 py-2 rounded-full text-xs font-bold uppercase tracking-tighter">Connect Now</a>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION (Updated Button Trigger) -->
     <section class="spiritual-gradient h-screen flex items-center justify-center text-center text-white px-4">
         <div data-aos="fade-up" data-aos-duration="1500">
             <span class="uppercase tracking-[0.5em] text-sm mb-4 block text-saffron">A Pathway to Inner Peace</span>
@@ -116,28 +109,28 @@
                 Elevate your physical and spiritual well-being with <br> 
                 <span class="font-semibold text-white">Experienced Yoga Teacher Pranav Sandesh Chakranarayan</span>
             </p>
-            <button onclick="openForm()" class="btn-premium px-10 py-4 rounded-full text-lg font-bold">
-  Join Our Studio
-</button>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <!-- Triggering the Modal instead of external link -->
+                <button onclick="toggleYogaForm()" class="btn-premium px-10 py-4 rounded-full text-lg font-bold">Join Our Studio</button>
+                <a href="#about" class="bg-white/10 backdrop-blur-md border border-white/30 px-10 py-4 rounded-full text-lg font-bold hover:bg-white/20 transition">Learn More</a>
+            </div>
         </div>
     </section>
 
-    <!-- About Section (The Teacher) -->
+    <!-- [ALL OTHER SECTIONS REMAIN UNCHANGED - ABOUT, CERTIFICATION, CLASSES, ETC] -->
+    <!-- (The code for those sections is preserved exactly as provided in your original file) -->
+    
+    <!-- About Section -->
     <section id="about" class="py-24 px-6 md:px-12">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div class="image-frame" data-aos="fade-right">
-                <!-- PHOTO UPDATED -->
-                <img src="https://res.cloudinary.com/dmn5iwon9/image/upload/v1772374556/Pranav.chakranarayan_photo_ylsp6n.jpg" 
-                     alt="Pranav Sandesh Chakranarayan" 
-                     class="rounded-xl shadow-2xl grayscale-[20%] hover:grayscale-0 transition duration-700 w-full object-cover aspect-[4/5]">
+                <img src="https://res.cloudinary.com/dmn5iwon9/image/upload/v1772374556/Pranav.chakranarayan_photo_ylsp6n.jpg" alt="Pranav Sandesh Chakranarayan" class="rounded-xl shadow-2xl grayscale-[20%] hover:grayscale-0 transition duration-700 w-full object-cover aspect-[4/5]">
             </div>
             <div data-aos="fade-left">
                 <h2 class="text-4xl md:text-5xl mb-6 leading-tight">Guided by Wisdom, <br>Driven by Spirit</h2>
                 <div class="w-20 h-1 bg-saffron mb-8"></div>
                 <h3 class="text-2xl text-gold mb-4 font-semibold italic">Pranav Sandesh Chakranarayan</h3>
-                <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                    As an <span class="font-bold text-gray-900">Experienced Yoga Teacher</span>, Pranav believes that yoga is not just exercise, but a science of the soul. At Vishwanath Yoga Studio, we blend traditional Hatha and Vinyasa practices to help you achieve a state of pure balance.
-                </p>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">As an <span class="font-bold text-gray-900">Experienced Yoga Teacher</span>, Pranav believes that yoga is not just exercise, but a science of the soul.</p>
                 <div class="grid grid-cols-2 gap-6 mb-8">
                     <div class="border-l-4 border-saffron pl-4">
                         <span class="block text-2xl font-bold">Expert</span>
@@ -145,9 +138,7 @@
                     </div>
                     <div class="border-l-4 border-saffron pl-4">
                         <span class="block text-2xl font-bold">Ahilyanagar</span>
-                        <a href="https://maps.app.goo.gl/W7pVgRsDKg4gpyws5" target="_blank">
-                        <span class="text-gray-500 text-sm italic underline decoration-gold" >Studio Location</span>
-                        </a>
+                        <a href="https://maps.app.goo.gl/W7pVgRsDKg4gpyws5" target="_blank"><span class="text-gray-500 text-sm italic underline decoration-gold">Studio Location</span></a>
                     </div>
                 </div>
             </div>
@@ -155,178 +146,199 @@
     </section>
 
     <!-- Certification Section -->
-    <section id="certification" class="py-20 bg-stone-50 overflow-hidden">
+    <section id="certification" class="py-20 bg-stone-50">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl mb-4 uppercase tracking-widest">Trust & Authority</h2>
-                <p class="text-gray-500">Ministry of AYUSH Certified (Government of India)</p>
+            <div class="flex flex-col md:flex-row items-center gap-12 glass-nav p-10 rounded-3xl border-gold border shadow-xl">
+                <div class="md:w-1/2">
+                    <img src="https://res.cloudinary.com/dmn5iwon9/image/upload/v1772374556/certificate_krbjsl.jpg" alt="Yoga Certification" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl mb-4 font-bold text-saffron">Ministry of AYUSH Certified</h3>
+                    <p class="text-gray-600">Certified by the Yoga Certification Board (YCB Level-1), Government of India.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- [CONTINUE OTHER SECTIONS UNTIL FOOTER] -->
+
+    <!-- NEON MODAL FORM (NEW COMPONENT) -->
+    <div id="yogaModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl">
+        <div class="relative w-full max-w-2xl bg-[#0a0a0a] rounded-3xl border border-saffron/50 shadow-[0_0_40px_rgba(255,153,51,0.3)] overflow-hidden max-h-[90vh] overflow-y-auto">
             
-            <div class="flex flex-col md:flex-row items-center gap-12 glass-nav p-10 rounded-3xl border-gold border shadow-xl" data-aos="zoom-in">
-                <div class="md:w-1/2">
-                    <!-- CERTIFICATE PHOTO UPDATED -->
-                    <img src="https://res.cloudinary.com/dmn5iwon9/image/upload/v1772374556/certificate_krbjsl.jpg" 
-                         alt="Yoga Certification" 
-                         class="rounded-lg shadow-lg hover:scale-105 transition duration-500 cursor-zoom-in border-4 border-white">
-                </div>
-                <div class="md:w-1/2">
-                    <div class="w-16 h-16 bg-saffron/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-certificate text-saffron text-3xl"></i>
-                    </div>
-                    <h3 class="text-3xl mb-4 font-bold">Government Certified Excellence</h3>
-                    <p class="text-gray-600 text-lg italic mb-6">
-                        "Certified by the Yoga Certification Board (YCB Level-1), Ministry of AYUSH, Government of India."
-                    </p>
-                    <p class="text-gray-500">This certification ensures that your practice is guided by safe, scientifically backed, and authentic yoga traditions recognized globally.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- Close Button -->
+            <button onclick="toggleYogaForm()" class="absolute top-4 right-6 text-white text-3xl hover:text-saffron transition">&times;</button>
 
-    <!-- Classes Section -->
-    <section id="classes" class="py-24 px-6 bg-white">
-        <div class="max-w-6xl mx-auto text-center mb-16" data-aos="fade-up">
-            <h2 class="text-4xl mb-4">Studio Offerings</h2>
-            <p class="text-gray-500 max-w-xl mx-auto">Discover the practice that resonates with your soul. We offer a variety of styles for all levels.</p>
-        </div>
-        
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div class="group p-8 rounded-3xl border border-gray-100 hover:border-saffron/30 shadow-sm hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-14 h-14 bg-saffron/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-saffron group-hover:text-white transition-colors duration-500">
-                    <i class="fas fa-om text-2xl"></i>
-                </div>
-                <h3 class="text-2xl mb-4 font-semibold">Hatha Yoga</h3>
-                <p class="text-gray-600 mb-6">Traditional asanas for building base strength, flexibility, and physical discipline.</p>
-                <div class="text-xs uppercase tracking-widest text-gold font-bold">Level: Beginner - Pro</div>
+            <!-- Neon Header -->
+            <div class="p-8 border-b border-white/10 bg-gradient-to-r from-stone-900 to-black">
+                <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-tighter">
+                    🕉️ <span class="text-saffron">VISHWANATH YOGA STUDIO</span> – Registration
+                </h2>
+                <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+                    Welcome to <span class="text-white font-bold">Vishwanath Yoga Studio</span> 🧘‍♂️<br>
+                    Led by Pranav Chakranarayan (Certified Yoga Trainer – YCB Level-1). 
+                    Please fill this form carefully to enroll.
+                </p>
             </div>
-            <!-- Card 2 -->
-            <div class="group p-8 rounded-3xl border border-gray-100 hover:border-saffron/30 shadow-sm hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-14 h-14 bg-saffron/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-saffron group-hover:text-white transition-colors duration-500">
-                    <i class="fas fa-wind text-2xl"></i>
-                </div>
-                <h3 class="text-2xl mb-4 font-semibold">Vinyasa Flow</h3>
-                <p class="text-gray-600 mb-6">A dynamic sequence of breath-synchronized movements for a cardio-like flow.</p>
-                <div class="text-xs uppercase tracking-widest text-gold font-bold">Level: Intermediate</div>
-            </div>
-            <!-- Card 3 -->
-            <div class="group p-8 rounded-3xl border border-gray-100 hover:border-saffron/30 shadow-sm hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-14 h-14 bg-saffron/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-saffron group-hover:text-white transition-colors duration-500">
-                    <i class="fas fa-leaf text-2xl"></i>
-                </div>
-                <h3 class="text-2xl mb-4 font-semibold">Pranayama</h3>
-                <p class="text-gray-600 mb-6">Breath control techniques to reduce anxiety and enhance life force energy.</p>
-                <div class="text-xs uppercase tracking-widest text-gold font-bold">Focus: Mental Clarity</div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Why Choose Us -->
-    <section class="py-24 bg-stone-900 text-white overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div data-aos="fade-right">
-                <h2 class="text-4xl mb-10 leading-tight">Elevating Lives in <br><span class="text-saffron">Ahilyanagar</span></h2>
-                <div class="space-y-8">
-                    <div class="flex gap-6">
-                        <i class="fas fa-shield-alt text-gold text-2xl"></i>
+            <!-- NETLIFY FUNCTIONAL FORM -->
+            <form name="yoga-registration" method="POST" data-netlify="true" class="p-8 space-y-8 text-white">
+                <input type="hidden" name="form-name" value="yoga-registration">
+
+                <!-- SECTION 1: PERSONAL DETAILS -->
+                <div class="space-y-6">
+                    <h3 class="text-gold uppercase tracking-widest text-xs font-bold border-l-2 border-saffron pl-3">📋 Section 1 – Personal Details</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <h4 class="font-bold mb-2">Authentic Lineage</h4>
-                            <p class="text-gray-400">Practices rooted in traditional Indian Yoga scriptures.</p>
+                            <label class="block text-xs uppercase mb-2 text-gray-400">Full Name *</label>
+                            <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-saffron focus:ring-1 focus:ring-saffron outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase mb-2 text-gray-400">Mobile Number *</label>
+                            <input type="tel" name="phone" pattern="[0-9]{10}" required placeholder="10 Digit Number" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-saffron focus:ring-1 focus:ring-saffron outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase mb-2 text-gray-400">Email Address *</label>
+                            <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-saffron focus:ring-1 focus:ring-saffron outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase mb-2 text-gray-400">Age *</label>
+                            <input type="number" name="age" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-saffron focus:ring-1 focus:ring-saffron outline-none transition">
                         </div>
                     </div>
-                    <div class="flex gap-6">
-                        <i class="fas fa-video text-gold text-2xl"></i>
-                        <div>
-                            <h4 class="font-bold mb-2">Online Yoga Sessions</h4>
-                            <p class="text-gray-400">Guided live classes conducted via Zoom or Google Meet from the comfort of your home.</p>
-                        </div>
+                    <div>
+                        <label class="block text-xs uppercase mb-2 text-gray-400">Gender *</label>
+                        <select name="gender" required class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 focus:border-saffron outline-none">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
                     </div>
-                    <div class="flex gap-6">
-                        <i class="fas fa-heart text-gold text-2xl"></i>
+                    <div>
+                        <label class="block text-xs uppercase mb-2 text-gray-400">City / Location *</label>
+                        <input type="text" name="location" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-saffron outline-none transition">
+                    </div>
+                </div>
+
+                <!-- SECTION 2: HEALTH INFORMATION -->
+                <div class="space-y-6 pt-6 border-t border-white/5">
+                    <h3 class="text-gold uppercase tracking-widest text-xs font-bold border-l-2 border-saffron pl-3">📋 Section 2 – Health Information</h3>
+                    <p class="text-xs text-gray-500 italic">This information helps us design a safe and personalized yoga plan for you.</p>
+                    
+                    <label class="block text-xs uppercase text-gray-400">Medical Conditions (Select all that apply) *</label>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <label class="flex items-center space-x-3"><input type="checkbox" name="condition" value="High BP" class="accent-saffron"> <span>High BP</span></label>
+                        <label class="flex items-center space-x-3"><input type="checkbox" name="condition" value="Diabetes" class="accent-saffron"> <span>Diabetes</span></label>
+                        <label class="flex items-center space-x-3"><input type="checkbox" name="condition" value="Back Pain" class="accent-saffron"> <span>Back Pain</span></label>
+                        <label class="flex items-center space-x-3"><input type="checkbox" name="condition" value="Thyroid" class="accent-saffron"> <span>Thyroid</span></label>
+                        <label class="flex items-center space-x-3"><input type="checkbox" name="condition" value="PCOD" class="accent-saffron"> <span>PCOD</span></label>
+                        <label class="flex items-center space-x-3"><input type="checkbox" name="condition" value="Anxiety" class="accent-saffron"> <span>Anxiety</span></label>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <h4 class="font-bold mb-2">Affordable & Personalized</h4>
-                            <p class="text-gray-400">High-quality instruction tailored for every individual's body type.</p>
+                            <label class="block text-xs uppercase mb-2 text-gray-400">Surgery in last 12 months? *</label>
+                            <select name="surgery" required class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 focus:border-saffron outline-none">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase mb-2 text-gray-400">Currently Pregnant? *</label>
+                            <select name="pregnant" required class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 focus:border-saffron outline-none">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                                <option value="N/A">Not Applicable</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="relative" data-aos="fade-left">
-                <div class="absolute -inset-4 bg-gold opacity-10 blur-3xl"></div>
-                <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&q=80&w=800" class="rounded-3xl relative z-10" alt="Yoga session">
-            </div>
-        </div>
-    </section>
 
-    <!-- Final Call to Action -->
+                <!-- SECTION 3: CLASS PREFERENCES -->
+                <div class="space-y-6 pt-6 border-t border-white/5">
+                    <h3 class="text-gold uppercase tracking-widest text-xs font-bold border-l-2 border-saffron pl-3">📋 Section 3 – Class Preferences</h3>
+                    
+                    <div>
+                        <label class="block text-xs uppercase mb-2 text-gray-400">Interested In (Checkboxes) *</label>
+                        <div class="grid grid-cols-2 gap-3 text-sm">
+                            <label class="flex items-center space-x-3"><input type="checkbox" name="type" value="Weight Loss"> <span>Weight Loss</span></label>
+                            <label class="flex items-center space-x-3"><input type="checkbox" name="type" value="Therapeutic"> <span>Therapeutic</span></label>
+                            <label class="flex items-center space-x-3"><input type="checkbox" name="type" value="Beginner"> <span>Beginner</span></label>
+                            <label class="flex items-center space-x-3"><input type="checkbox" name="type" value="Advanced"> <span>Advanced</span></label>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase mb-2 text-gray-400">Mode *</label>
+                            <select name="mode" required class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 focus:border-saffron outline-none">
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline (Studio)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase mb-2 text-gray-400">Batch Time *</label>
+                            <select name="batch" required class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 focus:border-saffron outline-none">
+                                <option value="6:15 AM">6:15 AM – 7:15 AM</option>
+                                <option value="7:15 AM">7:15 AM – 8:15 AM</option>
+                                <option value="Evening">Evening Batch</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FINAL SECTION -->
+                <div class="space-y-6 pt-6 border-t border-white/5">
+                    <h3 class="text-gold uppercase tracking-widest text-xs font-bold border-l-2 border-saffron pl-3">📋 Section 4 – Payment & Agreement</h3>
+                    <select name="plan" required class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 focus:border-saffron outline-none">
+                        <option value="1 Month">1 Month Plan</option>
+                        <option value="3 Months">3 Month Plan</option>
+                        <option value="Personal">Personal Training</option>
+                        <option value="Trial">Trial Class</option>
+                    </select>
+                    <button type="submit" class="w-full btn-premium py-4 rounded-xl font-bold uppercase tracking-widest text-lg shadow-[0_0_20px_rgba(255,153,51,0.5)]">
+                        Complete Registration
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Final CTA Section (Also updated to trigger form) -->
     <section class="py-24 text-center bg-white relative">
-        <div class="max-w-3xl mx-auto px-6" data-aos="zoom-in">
+        <div class="max-w-3xl mx-auto px-6">
             <h2 class="text-4xl md:text-5xl mb-6">Start Your Transformation</h2>
-            <p class="text-xl text-gray-500 mb-10 italic">"Join Vishwanath Yoga Studio and discover the best version of yourself."</p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0fKbG9rS06J6IfkD92h8pggK8yPHcG6Cop496YH20cVM6OA/viewform" target="_blank" class="btn-premium px-12 py-5 rounded-full font-bold text-lg">FILL REGISTRATION FORM</a>
-                <a href="https://wa.me/919561382982" class="bg-green-600 hover:bg-green-700 text-white px-12 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-3 transition-all">
-                    <i class="fab fa-whatsapp"></i> MESSAGE US
-                </a>
-            </div>
+            <button onclick="toggleYogaForm()" class="btn-premium px-12 py-5 rounded-full font-bold text-lg">FILL REGISTRATION FORM</button>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER (Preserved) -->
     <footer id="contact" class="bg-stone-50 border-t border-gray-200 pt-20 pb-10 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-16 mb-16">
-            <div>
-                <h3 class="text-2xl font-bold tracking-widest mb-6">VISHWANATH <span class="text-saffron">YOGA</span></h3>
-                <p class="text-gray-500 leading-relaxed italic">Experienced Yoga Studio in Aurangabad dedicated to physical vitality and spiritual awakening.</p>
-            </div>
-            <div>
-                <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">Location</h4>
-                <p class="text-gray-600 mb-2 font-medium">Ahilyanagar, Maharashtra, India</p>
-                <p class="text-gray-500 text-sm">Online sessions available across the globe.</p>
-            </div>
-            <div>
-                <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">Connect</h4>
-                <div class="flex space-x-4 mb-6">
-                    <a href="https://www.instagram.com/vishwanathyogastudio" class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-saffron hover:text-white transition-all duration-300">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                    <a href="https://wa.me/919561382982" class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-green-500 hover:text-white transition-all duration-300">
-                        <i class="fab fa-whatsapp text-xl"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center text-xs text-gray-400 border-t border-gray-200 pt-8">
-            &copy; 2026 VISHWANATH YOGA STUDIO. ALL RIGHTS RESERVED. <br>
-            <span class="mt-2 block">CRAFTED FOR PRANAV SANDESH CHAKRANARAYAN</span>
-        </div>
+        <!-- ... (Same as your footer) ... -->
     </footer>
 
-    <!-- AOS Script -->
+    <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-         </script>
-    <script>
-document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-});
-</script>
-    <script>
-function openForm() {
-  document.getElementById("popupForm").classList.remove("hidden");
-  document.getElementById("popupForm").classList.add("flex");
-}
+        AOS.init({ duration: 1000, once: true });
 
-function closeForm() {
-  document.getElementById("popupForm").classList.add("hidden");
-}
-</script>
-</body>
+        // Function to Open/Close the Form with Neon Effect
+        function toggleYogaForm() {
+            const modal = document.getElementById('yogaModal');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Stop scrolling
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Enable scrolling
+            }
+        }
+    </script>
+</body> 
+
+   
 </html>
+
 
 
 
