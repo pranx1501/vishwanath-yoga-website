@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vishwanath Yoga Studio | Experienced Teacher Pranav Sandesh</title>
+    
+    <!-- SECURITY META TAGS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-ancestors 'none';">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="theme-color" content="#FF9933">
     
     <!-- Scripts & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -78,6 +88,14 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 10px; }
+
+        /* SECURITY: Disable Image Drag */
+        img {
+            -webkit-user-drag: none;
+            -moz-user-drag: none;
+            -ms-user-drag: none;
+            user-drag: none;
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -117,9 +135,10 @@
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div class="image-frame" data-aos="fade-right">
                 <!-- PHOTO UPDATED -->
-                <img src="https://res.cloudinary.com/dmn5iwon9/image/upload/v1772374556/Pranav.chakranarayan_photo_ylsp6n.jpg" 
+<img src="https://res.cloudinary.com/dmn5iwon9/image/upload/v1772374556/Pranav.chakranarayan_photo_ylsp6n.jpg" 
                      alt="Pranav Sandesh Chakranarayan" 
-                     class="rounded-xl shadow-2xl grayscale-[20%] hover:grayscale-0 transition duration-700 w-full object-cover aspect-[4/5]">
+                     class="rounded-xl shadow-2xl grayscale-[20%] hover:grayscale-0 transition duration-700 w-full object-cover aspect-[4/5]"
+                     draggable="false">
             </div>
             <div data-aos="fade-left">
                 <h2 class="text-4xl md:text-5xl mb-6 leading-tight">Guided by Wisdom, <br>Driven by Spirit</h2>
@@ -157,7 +176,8 @@
                     <!-- CERTIFICATE PHOTO UPDATED -->
                     <img src="https://res.cloudinary.com/dmn5iwon9/image/upload/v1772374556/certificate_krbjsl.jpg" 
                          alt="Yoga Certification" 
-                         class="rounded-lg shadow-lg hover:scale-105 transition duration-500 cursor-zoom-in border-4 border-white">
+                         class="rounded-lg shadow-lg hover:scale-105 transition duration-500 cursor-zoom-in border-4 border-white"
+                         draggable="false">
                 </div>
                 <div class="md:w-1/2">
                     <div class="w-16 h-16 bg-saffron/10 rounded-full flex items-center justify-center mb-6">
@@ -240,9 +260,9 @@
                     </div>
                 </div>
             </div>
-            <div class="relative" data-aos="fade-left">
+                <div class="relative" data-aos="fade-left">
                 <div class="absolute -inset-4 bg-gold opacity-10 blur-3xl"></div>
-                <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&q=80&w=800" class="rounded-3xl relative z-10" alt="Yoga session">
+                <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&q=80&w=800" class="rounded-3xl relative z-10" alt="Yoga session" draggable="false">
             </div>
         </div>
     </section>
@@ -300,13 +320,108 @@
             offset: 100
         });
     </script>
+    <!-- SECURITY: Advanced Protection -->
     <script>
-document.addEventListener("contextmenu", function(e) {
-  e.preventDefault();
-});
-</script>
+    (function() {
+        'use strict';
+        
+        // Store protection state
+        var _a = false;
+        
+        // Advanced right-click blocking with event capture
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }, true);
+        
+        // Disable all DevTools shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Block F-Keys
+            if (/^F\d+$/.test(e.key)) { e.preventDefault(); return false; }
+            // Block Ctrl+Shift+Key
+            if (e.ctrlKey && e.shiftKey && /^[IJC]$/i.test(e.key)) { e.preventDefault(); return false; }
+            // Block Ctrl+Key
+            if (e.ctrlKey && /^[USPA]$/i.test(e.key)) { e.preventDefault(); return false; }
+            // Block PrintScreen
+            if (e.key === 'PrintScreen') { e.preventDefault(); return false; }
+        }, true);
+        
+        // Anti-iframe (clickjacking)
+        if (window.top !== window.self) {
+            window.top.location = window.self.location;
+        }
+        
+        // Disable selection on images
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
+        }, true);
+        
+        // Disable drag
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
+        }, true);
+        
+        // Disable copy/cut/paste
+        ['copy', 'cut', 'paste'].forEach(function(evt) {
+            document.addEventListener(evt, function(e) {
+                e.preventDefault();
+                return false;
+            }, true);
+        });
+        
+        // Enhanced DevTools Detection
+        setInterval(function() {
+            var threshold = 100;
+            var start = performance.now();
+            void (0, eval)('debugger');
+            var end = performance.now();
+            
+            // Multiple detection methods
+            if (end - start > threshold || 
+                window.devtools.isOpen || 
+                /Edge\/Chrome\/Firefox/.test(navigator.userAgent)) {
+                if (!_a) {
+                    _a = true;
+                    document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#000;color:#ff3333;font-family:monospace;text-align:center;padding:20px;"><div><h1>🚫 ACCESS DENIED</h1><p>Developer tools detected. This incident will be logged.</p></div></div>';
+                    document.body.style.pointerEvents = 'none';
+                }
+            }
+        }, 500);
+        
+        // Prevent event listener removal (self-protection)
+        var _originalAddEventListener = EventTarget.prototype.addEventListener;
+        EventTarget.prototype.addEventListener = function(type, listener, options) {
+            if (type === 'contextmenu' || type === 'keydown' || type === 'copy' || type === 'cut') {
+                _originalAddEventListener.call(this, type, listener, options);
+            }
+        };
+        
+        // Disable Ctrl+W (close tab)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'w') { e.preventDefault(); return false; }
+        }, true);
+        
+        // Disable Ctrl+N (new window)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'n') { e.preventDefault(); return false; }
+        }, true);
+        
+        // Disable Ctrl+T (new tab)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 't') { e.preventDefault(); return false; }
+        }, true);
+        
+    })();
+    </script>
+    
+    <!-- NoScript fallback -->
+    <noscript>
+        <style>
+            body { display: none !important; }
+        </style>
+    </noscript>
 </body>
 </html>
-
 
 
