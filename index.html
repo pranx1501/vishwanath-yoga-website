@@ -96,6 +96,22 @@
             -ms-user-drag: none;
             user-drag: none;
         }
+
+        /* SECURITY: Disable Text Selection */
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Allow selection only for links */
+        a, button, input, textarea, select {
+            -webkit-user-select: auto;
+            -moz-user-select: auto;
+            -ms-user-select: auto;
+            user-select: auto;
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -363,12 +379,22 @@
         }, true);
         
         // Disable copy/cut/paste
-        ['copy', 'cut', 'paste'].forEach(function(evt) {
+        ['copy', 'cut', 'paste', 'select', 'selectstart'].forEach(function(evt) {
             document.addEventListener(evt, function(e) {
                 e.preventDefault();
                 return false;
             }, true);
         });
+        
+        // Disable selection API
+        if (window.getSelection) {
+            window.getSelection = function() { return null; };
+        }
+        
+        // Disable document.selection
+        if (document.selection) {
+            document.selection.empty = function() {};
+        }
         
         // Enhanced DevTools Detection
         setInterval(function() {
